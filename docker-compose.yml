@@ -1,0 +1,17 @@
+version: '3.9'
+services:
+  postgres:
+    image: postgres
+    container_name: agendario-db
+    restart: always
+    environment:
+      POSTGRES_USER: agendario
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: agendario
+    ports:
+      - "5438:5432"
+    volumes:
+      - agendario-data:/var/lib/postgresql/data
+
+volumes:
+  agendario-data:
